@@ -14,7 +14,7 @@ body {
 
 /* Header styles */
 .header {
-    background-color: #4CAF50;  /* Blue background */
+    background-color: #007BFF;  /* Blue background */
     padding: 10px;
     text-align: center;
     color: white;
@@ -97,7 +97,7 @@ table th, table td {
 }
 
 table th {
-    background-color: #4CAF50; /* Blue background */
+    background-color: #007BFF; /* Blue background */
     color: white;
 }
 
