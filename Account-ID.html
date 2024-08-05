@@ -9,16 +9,16 @@
 <body>
     <div class="header">
         <h1>Account I.D.s</h1>
-        <div class="search-container">
+    </div>
+    <div class="search-container">
             <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search by account name...">
         </div>
-    </div>
     <div class="container">
-    <h2>TaskB</h2>
-    <tr>
         <h4>
             <th><a href="Home Page.html">Home</a></th>
         </h4>
+    <h2>TaskB</h2>
+    <tr>
     </tr>
     <table>
         <thead>
@@ -61,7 +61,8 @@
             </tr>
         </tbody>
     </table>
-
+</div>
+    <div class="container">
     <h2>PH</h2>
     <table>
         <thead>
@@ -195,8 +196,10 @@
                 <td>1302</td>
             </tr>
         </tbody>
-    </table>
+        </table>
+    </div>
 
+    <div class="container">
     <h2>Subcon</h2>
     <table>
         <thead>
@@ -263,7 +266,9 @@
             </tr>
         </tbody>
     </table>
+    </div>
 
+    <div class="container">
     <h2>CHINA</h2>
     <table>
         <thead>
@@ -325,7 +330,8 @@
             </tr>
         </tbody>
     </table>
-
+    </div>
+    <<div class="container">
     <h2>UK</h2>
     <table>
         <thead>
@@ -382,7 +388,8 @@
             </tr>
         </tbody>
     </table>
-
+    </div>
+    <div class="container">
     <h2>TOP Managements</h2>
     <table>
         <thead>
@@ -420,23 +427,31 @@
         function searchFunction() {
             const input = document.getElementById('searchInput');
             const filter = input.value.toLowerCase();
-            const tables = document.querySelectorAll('.container table tbody');
+            const containers = document.querySelectorAll('.container');
 
             let hasResults = false;
 
-            tables.forEach(tbody => {
-                const rows = tbody.getElementsByTagName('tr');
-                for (let i = 0; i < rows.length; i++) {
-                    const td = rows[i].getElementsByTagName('td')[0];
+            containers.forEach(container => {
+                const rows = container.querySelectorAll('tbody tr');
+                let containerHasResult = false;
+                rows.forEach(row => {
+                    const td = row.querySelector('td');
                     if (td) {
                         const txtValue = td.textContent || td.innerText;
                         if (txtValue.toLowerCase().indexOf(filter) > -1) {
-                            rows[i].style.display = '';
-                            hasResults = true;
+                            row.style.display = '';
+                            containerHasResult = true;
                         } else {
-                            rows[i].style.display = 'none';
+                            row.style.display = 'none';
                         }
                     }
+                });
+
+                if (containerHasResult) {
+                    container.style.display = '';
+                    hasResults = true;
+                } else {
+                    container.style.display = 'none';
                 }
             });
 

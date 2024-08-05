@@ -7,94 +7,130 @@
     <link rel="stylesheet" href="Contact.css">
     <script>
         function searchFunction() {
-            var input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById("searchInput");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("contactsTable");
-            tr = table.getElementsByTagName("tr");
-            for (i = 1; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[0];
-                if (td) {
-                    txtValue = td.textContent || td.innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = "";
-                    } else {
-                        tr[i].style.display = "none";
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toLowerCase();
+            const containers = document.querySelectorAll('.container');
+
+            let hasResults = false;
+
+            containers.forEach(container => {
+                const rows = container.querySelectorAll('tbody tr');
+                let containerHasResult = false;
+                rows.forEach(row => {
+                    const td = row.querySelector('td');
+                    if (td) {
+                        const txtValue = td.textContent || td.innerText;
+                        if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                            row.style.display = '';
+                            containerHasResult = true;
+                        } else {
+                            row.style.display = 'none';
+                        }
                     }
+                });
+
+                if (containerHasResult) {
+                    container.style.display = '';
+                    hasResults = true;
+                } else {
+                    container.style.display = 'none';
                 }
-            }
+            });
+
+            document.getElementById('noResults').style.display = hasResults ? 'none' : '';
         }
     </script>
 </head>
 <body>
     <div class="header">
-        <h1>Contact Numbers</h1>
-        <div class="search-container">
-            <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search by contact name...">
+        <div class="header-left">
+            <h1>Task Banana</h1>
+            <h4>
+                <a href="index.html">Home</a>
+            </h4>
         </div>
     </div>
-    <div class="container">
-        <h2>Task-B</h2>
-        <h4>
-            <a href="Home Page.html">Home</a>
-        </h4>
-        <table id="contactsTable">
-            <thead>
-                <tr>
-                    <th>Contact Name</th>
-                    <th>Contact Number</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Cherry BWM-Trackerteer</td>
-                    <td>(+63) 905 851 2019</td>
-                </tr>
-                <tr>
-                    <td>Aljon TaskB QA</td>
-                    <td>(+63) 926 955 3843</td>
-                </tr>
-                <tr>
-                    <td>Luisa TaskBQA1</td>
-                    <td>(+63) 999 876 7811</td>
-                </tr>
-                <tr>
-                    <td>aBi TaskBQA2</td>
-                    <td>(+63) 927 156 2634</td>
-                </tr>
-                <tr>
-                    <td>Rhea TaskB QA</td>
-                    <td>(+63) 928 870 2470</td>
-                </tr>
-                <!-- Add more contacts as needed -->
-            </tbody>
-        </table>
-    </div>
-    <div class="container">
-        <h2>Subcon</h2>
-        <table id="contactsTable">
-            <thead>
-                <tr>
-                    <th>Contact Name</th>
-                    <th>Contact Number</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>John Doe</td>
-                    <td>(123) 456-7890</td>
-                </tr>
-                <tr>
-                    <td>Jane Smith</td>
-                    <td>(987) 654-3210</td>
-                </tr>
-                <tr>
-                    <td>Emily Johnson</td>
-                    <td>(555) 123-4567</td>
-                </tr>
-                <!-- Add more contacts as needed -->
-            </tbody>
-        </table>
+    <div class="search-container">
+            <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search by contact name...">
+        </div>
+    <div id="main-container">
+        <div class="container">
+            <h2>TaskB</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Contact Name</th>
+                        <th>Contact Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cherry BWM-Trackerteer</td>
+                        <td>(+63) 905 851 2019</td>
+                    </tr>
+                    <tr>
+                        <td>Aljon TaskB QA</td>
+                        <td>(+63) 926 955 3843</td>
+                    </tr>
+                    <tr>
+                        <td>Luisa TaskBQA1</td>
+                        <td>(+63) 999 876 7811</td>
+                    </tr>
+                    <tr>
+                        <td>aBi TaskBQA2</td>
+                        <td>(+63) 927 156 2634</td>
+                    </tr>
+                    <tr>
+                        <td>Rhea TaskB QA</td>
+                        <td>(+63) 928 870 2470</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container">
+            <h2>TaskB Dev's and QA's</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Contact Name</th>
+                        <th>Contact Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jayson Trackerteer - DEV</td>
+                        <td>(123) 456-7890</td>
+                    </tr>
+                    <tr>
+                        <td>Lordan Trackerteer - DEV</td>
+                        <td>(987) 654-3210</td>
+                    </tr>
+                    <tr>
+                        <td>Sebastian Trackerteer - DEV</td>
+                        <td>(555) 123-4567</td>
+                    </tr>
+                    <tr>
+                        <td>Alejandro Trackerteer - DEV</td>
+                        <td>(555) 123-4567</td>
+                    </tr>
+                    <tr>
+                        <td>Rica Mae Trackerteer - DEV</td>
+                        <td>(555) 123-4567</td>
+                    </tr>
+                    <tr>
+                        <td>Ernesto Trackerteer - QA</td>
+                        <td>(555) 123-4567</td>
+                    </tr>
+                    <tr>
+                        <td>Mathew Trackerteer - QA</td>
+                        <td>(555) 123-4567</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="noResults" class="no-results" style="display:none;">No results found.</div>
     </div>
 </body>
 </html>
