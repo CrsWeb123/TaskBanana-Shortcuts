@@ -3,46 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Banana Users Contacts</title>
+    <title>Contact Numbers</title>
     <link rel="stylesheet" href="Contact.css">
+    <script>
+        function searchFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("contactsTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 1; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 <body>
-    <header>
-        <h1>Task Banana Users Contacts</h1>
-        <nav>
-            <ul>
-                <li><a href="Home Page.html">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#shortcuts">Shortcuts</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="home">
-            <h2>Welcome</h2>
-            <p>Welcome to Task Banana Shortcuts. Here you'll find useful keyboard shortcuts to boost your productivity.</p>
-        </section>
-        <section id="about">
-            <h2>About</h2>
-            <p>Task Banana is a tool designed to help you manage your tasks efficiently.</p>
-        </section>
-        <section id="shortcuts">
-            <h2>Shortcuts</h2>
-            <ul>
-                <li><strong>Ctrl + N:</strong> Create a new task</li>
-                <li><strong>Ctrl + S:</strong> Save current task</li>
-                <li><strong>Ctrl + D:</strong> Delete selected task</li>
-                <!-- Add more shortcuts as needed -->
-            </ul>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>If you have any questions, feel free to reach out to us at <a href="mailto:support@taskbanana.com">support@taskbanana.com</a>.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Task Banana. All rights reserved.</p>
-    </footer>
+    <div class="header">
+        <h1>Contact Numbers</h1>
+        <div class="search-container">
+            <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search by contact name...">
+        </div>
+    </div>
+    <div class="container">
+        <h2>Task Banana</h2>
+        <h4>
+            <a href="Home Page.html">Home</a>
+        </h4>
+        <table id="contactsTable">
+            <thead>
+                <tr>
+                    <th>Contact Name</th>
+                    <th>Contact Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John Doe</td>
+                    <td>(123) 456-7890</td>
+                </tr>
+                <tr>
+                    <td>Jane Smith</td>
+                    <td>(987) 654-3210</td>
+                </tr>
+                <tr>
+                    <td>Emily Johnson</td>
+                    <td>(555) 123-4567</td>
+                </tr>
+                <!-- Add more contacts as needed -->
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
