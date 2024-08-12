@@ -54,3 +54,14 @@ body {
     margin-bottom: 20px;
     color: #333;
 }
+.navbar a.taskb-login {
+    background-color: #3399ff; /* Slightly lighter blue */
+    color: white; /* Ensures the text is visible on a blue background */
+}
+
+.navbar a.taskb-login:hover {
+    background-color: #1a75ff; /* Slightly darker blue on hover */
+}
+
+
+
