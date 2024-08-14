@@ -64,8 +64,7 @@ body {
 .taskb-navbar {
     background-color: #3399ff; /* Blue background */
 }
-
-.taskb-navbar a {
+a.taskb-navbar  {
     color: #ffffff; /* White text */
 }
 
