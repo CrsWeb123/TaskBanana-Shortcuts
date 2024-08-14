@@ -79,7 +79,7 @@ header.dark-mode {
 
 .nav-button {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 5px 10px;
     border-radius: 4px;
     color: white;
     text-decoration: none;
@@ -91,13 +91,39 @@ header.dark-mode {
     background-color: #007BFF; /* Blue background */
 }
 
-.motor-button {
-    background-color: #0056b3; /* Darker blue background */
+.nav-button {
+    background-color: #007bff; /* Blue background color for the button */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for a more modern look */
+    padding: 5px 10px; /* Padding inside the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px;
+    font-size: 10px;
+}
+
+.nav-button a {
+    text-decoration: none; /* Remove underline from link */
+    color: white; /* White text color */
+    font-weight: bold; /* Make text bold */
 }
 
 .nav-button:hover {
-    opacity: 0.8; /* Slightly dim the button on hover */
+    background-color: #0056b3; /* Darker blue color on hover */
 }
+
+.nav-button a:hover {
+    color: #e0e0e0; /* Slightly lighter color for text on hover */
+}
+
+
+.nav-button:hover {
+    background-color: #0056b3; /* Darker blue color on hover */
+}
+
+.nav-button a:hover {
+    color: #e0e0e0; /* Slightly lighter color for text on hover */
+}
+
 
 /* Search container styles */
 .search-container {
