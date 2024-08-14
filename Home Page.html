@@ -9,15 +9,11 @@
 <body>
     <div class="header">
         <h1>Task Banana Shortcuts</h1>
-    </div> 
-    <div class="container">
-        <div class="shortcuts">Pages</div>
-        <div class="navbar">
-            <a href="Home Page.html">Home</a>
-            <a href="Account-ID.html">Account I.D's</a>
-            <a href="Contacts.html">Contacts</a>
-        </div>
     </div>
+    <button id="toggle-dark-mode">Toggle Dark Mode</button>
+    <button class="nav-button"><a href="Home Page.html">Home</a></button>
+    <button class="nav-button"><a href="Account-ID.html">Account I.D's</a></button>
+    <button class="nav-button"><a href="Contacts.html">Contacts</a></button>
     <div class="container">
         <div class="shortcuts">TaskB Shortcuts</div>
         <div class="navbar taskb-navbar">
@@ -38,5 +34,26 @@
     </div>
     </div>
     </div>
+    <script type="text/javascript">
+        const toggleButton = document.getElementById('toggle-dark-mode');
+const darkMode = localStorage.getItem('dark-mode');
+
+if (darkMode === 'enabled') {
+    document.body.classList.add('dark-mode');
+    document.querySelector('header').classList.add('dark-mode');
+    // Add any other elements you want to toggle
+}
+
+toggleButton.addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+    document.querySelector('header').classList.toggle('dark-mode');
+    // Add any other elements you want to toggle
+
+    if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('dark-mode', 'enabled');
+    } else {
+        localStorage.setItem('dark-mode', 'disabled');
+    }
+});</script>
 </body>
 </html>

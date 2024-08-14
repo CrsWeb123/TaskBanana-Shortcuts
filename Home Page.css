@@ -9,6 +9,37 @@ body {
     background-attachment: fixed; 
     color: #333;
 }
+body.dark-mode {
+    background-color: #121212;
+    color: white; /* Adjusted for better readability in dark mode */
+}
+
+/* Dark mode for specific elements */
+header.dark-mode {
+    background-color: #1f1f1f;
+}
+#toggle-dark-mode {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 20px;
+}
+
+#toggle-dark-mode:hover {
+    background-color: #0056b3;
+}
+
+#toggle-dark-mode:active {
+    background-color: #004085;
+}
+
 .header {
     background-color: #3399ff;
     margin: 20px;
@@ -48,34 +79,51 @@ body {
 }
 
 .navbar a:hover {
-    background-color: #3399ff;
+    background-color: #007BFF; /* Slightly darker blue on hover */
 }
 
-.container > div:first-child {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-    color: #333;
-}
-.navbar a.taskb-login {
-    background-color: #3399ff; /* Slightly lighter blue */
+.navbar .taskb-login {
+    background-color: #3399ff; /* Blue background for TaskB Log In */
     color: black; /* Ensures the text is visible on a blue background */
     font-weight: bold;
 }
-.navbar a.taskb-login:hover {
+
+.navbar .taskb-login:hover {
     background-color: #007BFF; /* Slightly darker blue on hover */
 }
-.taskb-navbar {
-    background-color: #3399ff; /* Blue background */
-}
-.taskb-navbar  {
-    color: #ffffff; /* White text */
-    font-size: 1.2em;
-    font-weight: bold
+.navigation {
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-.taskb-navbar a:hover {
-    background-color: #0056b3; /* Slightly lighter blue on hover */
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
+.nav-button {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    cursor: pointer;
+    font-size: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
 
+.nav-button a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
 
+.nav-button:hover {
+    background-color: #0056b3;
+}
+
+.nav-button a:hover {
+    color: #e0e0e0;
