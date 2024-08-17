@@ -87,7 +87,6 @@ header.dark-mode {
     color: black; /* Ensures the text is visible on a blue background */
     font-weight: bold;
 }
-
 .navbar .taskb-login:hover {
     background-color: #007BFF; /* Slightly darker blue on hover */
 }
