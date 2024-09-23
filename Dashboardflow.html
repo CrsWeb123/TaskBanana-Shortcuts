@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Station Dashboard Flow</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .station {
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-right: 10px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    .station-title {
+      font-size: 16px;
+      font-weight: bold;
+
+    .done-button {
+      background-color: #28a745;
+    }
+
+    .done-button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="station" id="station-1">
+    <p class="station-title">Station 1: Generate Model Number & Add Sketching</p>
+    <button onclick="revealNextStation(2)">Next</button>
+  </div>
+
+  <div class="station hidden" id="station-2">
+    <p class="station-title">Station 2: Make Card</p>
+    <button onclick="revealNextStation(3)">Next</button>
+    <button class="done-button" onclick="hideCurrentStation(2)">Done</button> 
+  </div>
+
+  <div class="station hidden" id="station-3">
+    <p class="station-title">Station 3: Co-Completed</p>
+    <button onclick="revealNextStation(4)">Next</button>
+    <button class="done-button" onclick="hideCurrentStation(3)">Done</button> 
+  </div>
+
+  <div class="station hidden" id="station-4">
+    <p class="station-title">Station 4: Video Check</p>
+    <button onclick="revealNextStation(5)">Next</button>
+    <button class="done-button" onclick="hideCurrentStation(4)">Done</button>
+  </div>
+
+  <div class="station hidden" id="station-5">
+    <p class="station-title">Station 5: Generate First Sample</p>
+    <button onclick="revealNextStation(6)">Next</button>
+    <button class="done-button" onclick="hideCurrentStation(5)">Done</button>
+  </div>
+
+  <div class="station hidden" id="station-6">
+    <p class="station-title">Station 6: Sample and Test</p>
+    <button onclick="revealNextStation(7)">Next</button>
+    <button onclick="revealNextStation(13)">Jump to Station 13</button> 
+    <button class="done-button" onclick="hideCurrentStation(6)">Done</button>
+  </div>
+
+  <div class="station hidden" id="station-7">
+    <p class="station-title">Station 7: Confirm Results</p>
+    <button onclick="revealNextStation(8)">Next</button>
+    <button class="done-button" onclick="hideCurrentStation(7)">Done</button> 
+  </div>
+
+  <div class="station hidden" id="station-8">
+    <p class="station-title">Station 8: Final Review</p>
+    <button onclick="revealNextStation(9)">Next</button>
+    <button class="done-button" onclick="hideCurrentStation(8)">Done</button> 
+  </div>
+
+  <div class="station hidden" id="station-9">
+    <p class="station-title">Station 9: Send for Approval</p>
+    <button onclick="revealNextStation(10)">Next</button>
+    <button class="done-button" onclick="hideCurrentStation(9)">Done</button> 
+  </div>
+
+  <div class="station hidden" id="station-10">
+    <p class="station-title">Station 10: Receive Approval</p>
+    <button onclick="revealNextStation(11)">Next</button>
+    <button class="done-button" onclick="hideCurrentStation(10)">Done</button> 
+  </div>
+
+  <div class="station hidden" id="station-11">
+    <p class="station-title">Station 11: Final Edits</p>
+    <button onclick="revealNextStation(12)">Next</button>
+    <button class="done-button" onclick="hideCurrentStation(11)">Done</button> 
+  </div>
+
+  <div class="station hidden" id="station-12">
+    <p class="station-title">Station 12: Ready for Production</p>
+    <button onclick="revealNextStation(13)">Next</button>
+    <button class="done-button" onclick="hideCurrentStation(12)">Done</button> 
+  </div>
+
+  <div class="station hidden" id="station-13">
+    <p class="station-title">Station 13: Production Start</p>
+    <button onclick="revealNextStation(13)">End of Flow</button>
+    <button class="done-button" onclick="hideCurrentStation(13)">Done</button> 
+  </div>
+
+  <script>
+    function revealNextStation(nextStationId) {
+      const nextStation = document.getElementById(`station-${nextStationId}`);
+      if (nextStation) {
+        nextStation.classList.remove('hidden');
+      }
+    }
+
+    function goBackToPreviousStation(previousStationId) {
+      const currentStation = document.querySelector('.station:not(.hidden)');
+      const previousStation = document.getElementById(`station-${previousStationId}`);
+      
+      if (currentStation && previousStation) {
+        currentStation.classList.add('hidden'); // Hide the current station
+        previousStation.classList.remove('hidden'); // Show the previous station
+      }
+    }
+
+    function hideCurrentStation(currentStationId) {
+      const currentStation = document.getElementById(`station-${currentStationId}`);
+      if (currentStation) {
+        currentStation.classList.add('hidden'); // Hide the current station
+      }
+    }
+  </script>
+
+</body>
+</html>
