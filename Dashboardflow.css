@@ -1,0 +1,100 @@
+.header {
+    background-color: #3399ff;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+.header h1 {
+    margin: 0;
+}
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .station {
+      margin-bottom: 20px;
+    }
+
+    .container {
+      margin: 20px;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      font-weight: bold;
+    }
+    button {
+      padding: 5px 10px;
+      font-size: 12px;
+      border-radius: 5px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-right: 20px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+.nav-button {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    cursor: pointer;
+    font-size: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin-left: 20px;
+}
+        .nav-button:hover {
+            background-color: #0056b3; /* Change background on hover */
+        }
+
+        .nav-button a {
+            text-decoration: none;      /* Remove underline from link */
+            color: inherit;             /* Inherit color from parent */
+            display: block;            /* Make the link fill the button */
+            width: 100%;               /* Make the link cover the entire button */
+            height: 100%;              /* Make the link cover the entire button */
+        }
+
+    .station-title {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .done-button {
+      background-color: #28a745;
+    }
+
+    .done-button:hover {
+      background-color: #218838;
+    }
+
+    .station-title {
+  text-align: center; /* Centers the text horizontally */
+  font-size: 18px;    /* You can adjust this if needed */
+  font-weight: bold;  /* Makes the text bold */
+  margin: 10px 0;     /* Adds some spacing */
+    }

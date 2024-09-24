@@ -4,80 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Station Dashboard Flow</title>
-  <style>
-    .header {
-    background-color: #3399ff;
-    margin: 20px;
-    padding: 15px;
-    text-align: center;
-    color: white;
-    font-weight: bold;
-}
-
-.header h1 {
-    margin: 0;
-}
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 20px;
-    }
-
-    .station {
-      margin-bottom: 20px;
-    }
-
-    .container {
-      margin: 20px;
-      padding: 20px;
-      background-color: rgba(255, 255, 255, 0.5);
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      font-weight: bold;
-    }
-
-    button {
-      padding: 10px 20px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      margin-right: 10px;
-    }
-
-    button:hover {
-      background-color: #0056b3;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    button:disabled {
-      background-color: #ccc;
-      cursor: not-allowed;
-    }
-
-    .station-title {
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    .done-button {
-      background-color: #28a745;
-    }
-
-    .done-button:hover {
-      background-color: #218838;
-    }
-  </style>
+  <link rel="stylesheet" href="Dashboardflow.css">
 </head>
 <body>
     <div class="header">
         <h1>PH Station Dashboard Flowchart</h1>
     </div>
+    <button class="nav-button"><a href="Home Page.html">Home</a></button>
 <div class="container">
   <div class="station" id="station-1">
     <p class="station-title">Station 1: Generate Model Number & Add Sketches</p> 
@@ -150,18 +83,17 @@
   }
 
   function jumpToStation13() {
-    // Reveal station 13
+   
     revealNextStation(13);
     
-    // Hide all "Jump to Station 13" buttons
+    
     hideJumpToStation13Buttons();
   }
 
   function completeStation13() {
-    // Hide station 13
+   
     hideCurrentStation(13);
     
-    // Show all "Jump to Station 13" buttons again
     showJumpToStation13Buttons();
   }
 </script>
