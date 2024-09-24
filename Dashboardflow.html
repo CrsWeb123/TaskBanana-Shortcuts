@@ -11,26 +11,28 @@
         <h1>PH Station Dashboard Flowchart</h1>
     </div>
     <button class="nav-button"><a href="Home Page.html">Home</a></button>
+    <button class="nav-button"><a href="Account-ID.html">Account I.D's</a></button>
+    <button class="nav-button"><a href="Contacts.html">Contacts</a></button>
 <div class="container">
   <div class="station" id="station-1">
     <p class="station-title">Station 1: Generate Model Number & Add Sketches</p> 
     <button onclick="revealNextStation(2)">Move to Make Cad</button>
-    <button class="jump-button" onclick="jumpToStation13()">Jump to Station 13</button>
+    <button class="jump-button" onclick="jumpToStation14()">Jump to Generate Pattern</button>
   </div>
 </div>
 <div class="container">
   <div class="station hidden" id="station-2">
     <p class="station-title">Station 2: Make Cad</p>
     <button onclick="revealNextStation(3)">Move to Cad Complete</button>
-    <button class="jump-button" onclick="jumpToStation13()">Jump to Station 13</button>
+    <button class="jump-button" onclick="jumpToStation14()">Jump to Generate Pattern</button>
     <button class="done-button" onclick="hideCurrentStation(2)">Station Undone</button> 
   </div>
 </div>
 <div class="container">
   <div class="station hidden" id="station-3">
     <p class="station-title">Station 3: Cad Complete</p>
-    <button onclick="revealNextStation(4)">Move to Victoria Check</button>
-    <button class="jump-button" onclick="jumpToStation13()">Jump to Station 13</button>
+    <button onclick="revealNextStation(4)">Move to Write tech pack</button>
+    <button class="jump-button" onclick="jumpToStation14()">Jump to Generate Pattern</button>
     <button class="done-button" onclick="hideCurrentStation(3)">Station Undone</button> 
   </div>
 </div>
@@ -38,7 +40,7 @@
   <div class="station hidden" id="station-4">
     <p class="station-title">Station 4: Write tech pack</p>
     <button onclick="revealNextStation(5)">Move to Victoria Check</button>
-    <button class="jump-button" onclick="jumpToStation13()">Jump to Station 13</button>
+    <button class="jump-button" onclick="jumpToStation14()">Jump to Generate Pattern</button>
     <button class="done-button" onclick="hideCurrentStation(4)">Station Undone</button> 
   </div>
 </div>
@@ -46,7 +48,7 @@
   <div class="station hidden" id="station-5">
     <p class="station-title">Station 5: Victoria Check</p>
     <button onclick="revealNextStation(6)">Move to Approved and Received Techpack and CAD</button>
-    <button class="jump-button" onclick="jumpToStation13()">Jump to Station 13</button>
+    <button class="jump-button" onclick="jumpToStation14()">Jump to Generate Pattern</button>
     <button class="done-button" onclick="hideCurrentStation(5)">Station Undone</button> 
   </div>
 </div>
@@ -54,15 +56,47 @@
   <div class="station hidden" id="station-6">
     <p class="station-title">Station 6: Approved and Received Techpack and CAD</p>
     <button onclick="revealNextStation(7)">Move to Calculate and Write Sample Consumption</button>
-    <button class="jump-button" onclick="jumpToStation13()">Jump to Station 13</button>
+    <button class="jump-button" onclick="jumpToStation14()">Jump to Generate Pattern</button>
     <button class="done-button" onclick="hideCurrentStation(6)">Station Undone</button> 
   </div>
 </div>
 <div class="container">
-  <div class="station hidden" id="station-13">
-    <p class="station-title">Station 13: Production Start</p>
-    <button onclick="revealNextStation(13)">Move to Generate 1st Sample</button>
-    <button class="done-button" onclick="completeStation13()">Station Undone</button> 
+  <div class="station hidden" id="station-7">
+    <p class="station-title">Station 7: Calculate and Write Sample Consumption</p>
+    <button onclick="revealNextStation(8)">Move to Confirm sample material delivery date</button>
+    <button class="jump-button" onclick="jumpToStation14()">Jump to Generate Pattern</button>
+    <button class="done-button" onclick="hideCurrentStation(7)">Station Undone</button> 
+  </div>
+</div>
+<div class="container">
+  <div class="station hidden" id="station-8">
+    <p class="station-title">Station 8: Confirm sample material delivery date</p>
+    <button onclick="revealNextStation(9)">Move to Receive sample material</button>
+    <button class="jump-button" onclick="jumpToStation14()">Jump to Generate Pattern</button>
+    <button class="done-button" onclick="hideCurrentStation(8)">Station Undone</button> 
+  </div>
+</div>
+<div class="container">
+  <div class="station hidden" id="station-9">
+    <p class="station-title">Station 9: Receive sample material</p>
+    <button onclick="revealNextStation(10)">Move to Send sample material to PH</button>
+    <button class="jump-button" onclick="jumpToStation14()">Jump to Generate Pattern</button>
+    <button class="done-button" onclick="hideCurrentStation(9)">Station Undone</button> 
+  </div>
+</div>
+<div class="container">
+  <div class="station hidden" id="station-10">
+    <p class="station-title">Station 10: Send sample material to PH</p>
+    <button onclick="revealNextStation(11)">Move to Send Sample material in transit</button>
+    <button class="jump-button" onclick="jumpToStation14()">Jump to Generate Pattern</button>
+    <button class="done-button" onclick="hideCurrentStation(10)">Station Undone</button> 
+  </div>
+</div>
+<div class="container">
+  <div class="station hidden" id="station-14">
+    <p class="station-title">Station 14: Generate Pattern</p>
+    <button onclick="revealNextStation(15)">Move to Generate 1st Sample</button>
+    <button class="done-button" onclick="completeStation14()">Station Undone</button> 
   </div>
 </div>
 <script>
@@ -80,29 +114,29 @@
     }
   }
 
-  function hideJumpToStation13Buttons() {
+  function hideJumpToStation14Buttons() {
     const jumpButtons = document.querySelectorAll('.jump-button');
     jumpButtons.forEach(button => button.style.display = 'none');
   }
 
-  function showJumpToStation13Buttons() {
+  function showJumpToStation14Buttons() {
     const jumpButtons = document.querySelectorAll('.jump-button');
     jumpButtons.forEach(button => button.style.display = 'inline-block');
   }
 
-  function jumpToStation13() {
+  function jumpToStation14() {
    
-    revealNextStation(13);
+    revealNextStation(14);
     
     
-    hideJumpToStation13Buttons();
+    hideJumpToStation14Buttons();
   }
 
-  function completeStation13() {
+  function completeStation14() {
    
-    hideCurrentStation(13);
+    hideCurrentStation(14);
     
-    showJumpToStation13Buttons();
+    showJumpToStation14Buttons();
   }
 </script>
 </body>
