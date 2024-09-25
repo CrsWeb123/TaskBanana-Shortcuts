@@ -92,11 +92,38 @@
     <button class="done-button" onclick="hideCurrentStation(10)">Station Undone</button> 
   </div>
 </div>
+<div class="station hidden" id="station-11">
+    <p class="station-title">Station 11: Sample material in transit</p>
+    <button onclick="revealNextStation(12)">Move to Sample Material Received in PH</button>
+    <button class="jump-button" onclick="jumpToStation14()">Jump to Generate Pattern</button>
+    <button class="done-button" onclick="hideCurrentStation(11)">Station Undone</button> 
+  </div>
+</div>
+<div class="station hidden" id="station-12">
+    <p class="station-title">Station 12: Sample Material Received in PH</p>
+    <button onclick="revealNextStation(13)">Move to Send sample material to sample room</button>
+    <button class="jump-button" onclick="jumpToStation14()">Jump to Generate Pattern</button>
+    <button class="done-button" onclick="hideCurrentStation(12)">Station Undone</button> 
+  </div>
+</div>
+<div class="station hidden" id="station-13">
+    <p class="station-title">Station 13: Send sample material to sample room</p>
+    <button onclick="revealNextStation(14)">Move to Generate Pattern</button>
+    <button class="done-button" onclick="hideCurrentStation(13)">Station Undone</button> 
+  </div>
+</div>
 <div class="container">
   <div class="station hidden" id="station-14">
     <p class="station-title">Station 14: Generate Pattern</p>
     <button onclick="revealNextStation(15)">Move to Generate 1st Sample</button>
     <button class="done-button" onclick="completeStation14()">Station Undone</button> 
+  </div>
+</div>
+<div class="container">
+  <div class="station hidden" id="station-15">
+    <p class="station-title">Station 15: Generate first sample</p>
+    <button onclick="revealNextStation(16)">Move to Check Sample To Be Send to UK</button>
+    <button class="done-button" onclick="hideCurrentStation(15)">Station Undone</button> 
   </div>
 </div>
 <script>
